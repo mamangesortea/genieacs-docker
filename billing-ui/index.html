@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>Arus — Billing ISP</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" aria-label="Arus beranda">
+          <span class="brand-mark" aria-hidden="true">a</span>
+          <span>arus<span class="brand-period">.</span></span>
+        </a>
+        <div class="workspace-label">WORKSPACE</div>
+        <button class="workspace-switcher" type="button">
+          <span class="workspace-icon">N</span>
+          <span class="workspace-copy"><strong>Netra Internet</strong><small>Billing workspace</small></span>
+          <span class="chevron">⌄</span>
+        </button>
+
+        <div class="nav-label">MENU UTAMA</div>
+        <nav class="main-nav" aria-label="Menu utama">
+          <button class="nav-item active" data-page="dashboard"><span class="nav-icon">◫</span>Ringkasan</button>
+          <button class="nav-item" data-page="customers"><span class="nav-icon">♙</span>Pelanggan<span class="nav-count" id="customer-count">0</span></button>
+          <button class="nav-item" data-page="plans"><span class="nav-icon">◈</span>Paket internet</button>
+          <button class="nav-item" data-page="invoices"><span class="nav-icon">▤</span>Tagihan<span class="nav-dot"></span></button>
+          <button class="nav-item" data-page="genieacs"><span class="nav-icon">◉</span>GenieACS</button>
+          <button class="nav-item" data-page="routers"><span class="nav-icon">⌁</span>Router MikroTik</button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="help-card">
+            <div class="help-icon">?</div>
+            <strong>Butuh bantuan?</strong>
+            <p>Panduan singkat untuk mulai mengelola billing.</p>
+            <a href="#prototype-note">Lihat panduan <span aria-hidden="true">↗</span></a>
+          </div>
+          <button class="profile-button" type="button">
+            <span class="avatar avatar-dark">DA</span>
+            <span class="profile-copy"><strong>Dina Amelia</strong><small>Administrator</small></span>
+            <span class="chevron">···</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobile-menu" type="button" aria-label="Buka navigasi">☰</button>
+          <div class="breadcrumb"><span>Netra Internet</span><span class="breadcrumb-slash">/</span><strong id="breadcrumb-current">Ringkasan</strong></div>
+          <div class="topbar-actions">
+            <span class="today-label" id="today-label"></span>
+            <button class="icon-button notification-button" type="button" aria-label="Notifikasi">♧<i></i></button>
+            <span class="avatar avatar-top">DA</span>
+          </div>
+        </header>
+
+        <section class="page-content" id="page-content" aria-live="polite"></section>
+        <footer class="page-footer"><span>Arus Billing</span><span>Prototipe UI · Data contoh</span></footer>
+      </main>
+    </div>
+
+    <dialog class="modal" id="form-modal">
+      <form method="dialog" class="modal-form" id="entity-form">
+        <div class="modal-heading">
+          <div><span class="eyebrow" id="modal-eyebrow">DATA BARU</span><h2 id="modal-title">Tambah pelanggan</h2></div>
+          <button class="modal-close" value="cancel" aria-label="Tutup">×</button>
+        </div>
+        <div id="modal-fields"></div>
+        <div class="modal-actions">
+          <button class="button button-quiet" value="cancel">Batal</button>
+          <button class="button button-primary" id="modal-submit" value="default">Simpan data</button>
+        </div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
